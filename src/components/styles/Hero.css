@@ -1,0 +1,22 @@
+.Hero {
+  text-align: center;
+}
+.Hero-image {
+  width: 100%;
+  height: 320px;
+  background-position: 15px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 40px;
+  padding-bottom: 160px;
+}
+.Hero-button {
+  margin-top: 18px;
+}

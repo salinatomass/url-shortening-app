@@ -1,0 +1,19 @@
+.Header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.Header-logo {
+  display: flex;
+}
+
+.Header-menu {
+  border: none;
+  background: transparent;
+  font-size: 36px;
+  display: flex;
+  color: var(--dark-gray-color);
+}

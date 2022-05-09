@@ -1,0 +1,52 @@
+.Statistics {
+  background-color: var(--gray-color);
+  text-align: center;
+  padding-bottom: 80px;
+}
+.Statistics-title {
+  margin-bottom: 12px;
+}
+
+.Statistics-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  margin-top: 120px;
+}
+.Statistics-card {
+  position: relative;
+
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white-color);
+  border-radius: 6px;
+  padding: 0 25px 40px;
+}
+.Statistics-card-image {
+  position: relative;
+  top: -45px; /* 90px (height) / 2 */
+
+  background-color: var(--secondary-color);
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.Statistics-card-title {
+  margin-bottom: 12px;
+}
+.Statistics-line_divider {
+  position: absolute;
+  top: -100px; /* 120px = container gap */
+
+  width: 8px;
+  height: 55px; /* 100px (container gap) - 45px (statistic image position top) */
+  background-color: var(--primary-color);
+}

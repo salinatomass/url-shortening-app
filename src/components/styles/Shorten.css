@@ -1,0 +1,43 @@
+.Shorten {
+  background-color: var(--gray-color);
+}
+
+.Shorten-form {
+  position: relative;
+  top: -83px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 4px;
+
+  background-color: var(--secondary-color);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.Shorten-input,
+.Shorten-submit {
+  width: 100%;
+  padding: 12px;
+  font-family: var(--primary-font);
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+.Shorten-input {
+  padding-left: 14px;
+  font-size: 16px;
+  color: var(--dark-blue-color);
+  background-color: var(--white-color);
+}
+.Shorten-input::placeholder {
+  color: var(--dark-gray-color);
+}
+.Shorten-submit {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 18px;
+}

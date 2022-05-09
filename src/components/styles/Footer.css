@@ -1,0 +1,43 @@
+.Footer {
+  background-color: var(--dark-blue-color);
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.Footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.Footer-logo img {
+  fill: var(--white-color);
+}
+.Footer-about {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.Footer-about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.Footer-about-title {
+  color: var(--white-color);
+  margin-bottom: 6px;
+}
+.Footer-about-link {
+  color: var(--dark-gray-color);
+  display: block;
+}
+.Footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.Footer-social-icon {
+  display: flex;
+}
