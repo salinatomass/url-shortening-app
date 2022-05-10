@@ -1,6 +1,5 @@
 import './styles/ShortenItem.css';
 import { ShortedURL } from '../types';
-import useDesktopBreakpoint from '../hooks/useDesktopBreakpoint';
 
 interface ShortenItemProps {
   item: ShortedURL;
@@ -9,11 +8,8 @@ interface ShortenItemProps {
 }
 
 const ShortenItem = ({ item, copied, updateCopiedURL }: ShortenItemProps) => {
-  const isDesktop = useDesktopBreakpoint();
-
   const mapLink = (link: string): string => {
-    if (isDesktop && link.length > 45) return link.slice(0, 42) + '...';
-    if (!isDesktop && link.length > 30) return link.slice(0, 27) + '...';
+    if (link.length > 30) return link.slice(0, 27) + '...';
     return link;
   };
 
