@@ -13,7 +13,7 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
   padding: 24px;
@@ -23,28 +23,55 @@
   background-position: top right;
   background-repeat: no-repeat;
 }
-.Shorten-input,
+.Shorten-input {
+  width: 100%;
+}
+.Shorten-input input,
 .Shorten-submit {
   width: 100%;
   padding: 12px;
   font-family: var(--primary-font);
   border: none;
   border-radius: 4px;
-  outline: none;
 }
-.Shorten-input {
+.Shorten-input input {
+  width: 100%;
   padding-left: 14px;
   font-size: 16px;
   color: var(--dark-blue-color);
   background-color: var(--white-color);
+  border: 3px solid transparent;
+  outline: none;
 }
-.Shorten-input::placeholder {
+.Shorten-input input::placeholder {
   color: var(--dark-gray-color);
 }
+.Shorten-input-error {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--error-color);
+  padding-top: 6px;
+
+  display: none;
+}
+.Shorten-input.error > input {
+  border: 3px solid var(--error-color);
+}
+.Shorten-input.error > input::placeholder {
+  color: #fecfcf;
+}
+.Shorten-input.error > .Shorten-input-error {
+  display: block;
+}
+
 .Shorten-submit {
   background-color: var(--primary-color);
   color: var(--white-color);
   font-size: 18px;
+}
+.Shorten-submit:disabled {
+  background-color: #9be3e2;
+  color: var(--gray-color);
 }
 .Shorten-list {
   display: flex;
@@ -67,6 +94,15 @@
   }
   .Shorten-list {
     gap: 20px;
+  }
+  .Shorten-input {
+    position: relative;
+  }
+  .Shorten-input-error {
+    position: absolute;
+    padding: 0;
+    bottom: -28px;
+    font-size: 16px;
   }
 }
 

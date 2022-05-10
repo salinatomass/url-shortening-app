@@ -1,4 +1,10 @@
-export interface ShortURL {
+export type SocialMediaIcon =
+  | 'facebook'
+  | 'twitter'
+  | 'pinterest'
+  | 'instagram';
+
+export interface ShortedURL {
   code: string;
   original_link: string;
   short_link: string;
@@ -7,7 +13,14 @@ export interface ShortURL {
 
 export interface ResponseOfShortenAPI {
   ok: boolean;
-  result: ShortURL;
+  result: ShortedURL;
   error_code?: number;
   error?: string;
+}
+
+export interface ShortenState {
+  shortenList: ShortedURL[];
+  copiedURL: string;
+  isLoading: boolean;
+  errorMessage: string;
 }

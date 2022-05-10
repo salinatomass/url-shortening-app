@@ -18,10 +18,15 @@
   color: var(--primary-color);
   padding-top: 12px;
   padding-bottom: 12px;
+  display: block;
+  font-size: 18px;
+}
+.Shorten-link:hover {
+  text-decoration: underline;
 }
 .Shorten-copy {
   width: 100%;
-  padding: 12px 24px;
+  padding: 12px;
   font-size: 16px;
   font-weight: bold;
   color: var(--white-color);
@@ -55,5 +60,14 @@
   }
   .Shorten-link {
     padding: 0;
+  }
+  .Shorten-copy {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Shorten-link {
+    font-size: 20px;
   }
 }

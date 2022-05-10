@@ -1,6 +1,6 @@
 import './styles/Shorten.css';
 import React, { useState } from 'react';
-import { useShortenList } from '../hooks/useShortenList';
+import { useShortenState } from '../hooks/useShortenState';
 
 import ShortenItem from './ShortenItem';
 import useDesktopBreakpoint from '../hooks/useDesktopBreakpoint';
@@ -9,9 +9,11 @@ import BgShortenMobile from '../images/bg-shorten-mobile.svg';
 import BgShortenDesktop from '../images/bg-shorten-desktop.svg';
 
 const Shorten = () => {
-  const [inputValue, setInputValue] = useState<string>('');
-  const { shortenList, updateShortenList } = useShortenList();
+  const { shortenState, addToShortenList, updateCopiedURL } = useShortenState();
+  const { shortenList, errorMessage, isLoading, copiedURL } = shortenState;
   const isDesktop = useDesktopBreakpoint();
+
+  const [inputValue, setInputValue] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setInputValue(e.target.value);
@@ -20,7 +22,7 @@ const Shorten = () => {
     e.preventDefault();
     setInputValue('');
 
-    await updateShortenList(inputValue);
+    await addToShortenList(inputValue);
   };
 
   return (
@@ -36,21 +38,32 @@ const Shorten = () => {
             }}
             onSubmit={handleSubmit}
           >
-            <input
-              className="Shorten-input"
-              type="text"
-              name="link"
-              value={inputValue}
-              placeholder="Shorten a link here..."
-              onChange={handleChange}
-            />
-            <button className="Shorten-submit" type="submit">
-              Shorten it
+            <div className={`Shorten-input ${errorMessage && 'error'}`}>
+              <input
+                type="text"
+                name="link"
+                value={inputValue}
+                placeholder="Shorten a link here..."
+                onChange={handleChange}
+              />
+              <p className="Shorten-input-error">{errorMessage}</p>
+            </div>
+            <button
+              className="Shorten-submit"
+              type="submit"
+              disabled={isLoading}
+            >
+              {isLoading ? 'Loading...' : 'Shorten it'}
             </button>
           </form>
-          <ul className="Shorten-list">
+          <ul className="Shorten-list" id="list">
             {shortenList.map(item => (
-              <ShortenItem item={item} key={item.code} />
+              <ShortenItem
+                item={item}
+                copied={item.full_short_link === copiedURL}
+                updateCopiedURL={updateCopiedURL}
+                key={item.code}
+              />
             ))}
           </ul>
         </div>

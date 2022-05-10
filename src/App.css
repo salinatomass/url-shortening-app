@@ -77,13 +77,6 @@ a {
   border-radius: 80px;
 }
 
-button:hover,
-.primaryButton:hover {
-  background-color: #9be3e2;
-  color: var(--gray-color);
-  cursor: pointer;
-}
-
 .wrapper {
   padding-left: 15px;
   padding-right: 15px;
@@ -95,6 +88,13 @@ button:hover,
   .wrapper {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  button:hover,
+  .primaryButton:hover {
+    background-color: #9be3e2;
+    color: var(--gray-color);
+    cursor: pointer;
   }
 }
 

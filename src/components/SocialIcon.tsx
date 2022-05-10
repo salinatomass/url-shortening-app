@@ -1,5 +1,7 @@
+import { SocialMediaIcon } from '../types';
+
 interface SocialIconProps {
-  icon: 'facebook' | 'twitter' | 'pinterest' | 'instagram';
+  icon: SocialMediaIcon;
 }
 
 const facebookIcon = (

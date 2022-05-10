@@ -1,26 +1,39 @@
-import { useState } from 'react';
-import { ShortURL } from '../types';
-
 import './styles/ShortenItem.css';
+import { ShortedURL } from '../types';
+import useDesktopBreakpoint from '../hooks/useDesktopBreakpoint';
 
 interface ShortenItemProps {
-  item: ShortURL;
+  item: ShortedURL;
+  copied: boolean;
+  updateCopiedURL: (link: string) => void;
 }
 
-const ShortenItem = ({ item }: ShortenItemProps) => {
-  const [copied, setCopied] = useState(false);
+const ShortenItem = ({ item, copied, updateCopiedURL }: ShortenItemProps) => {
+  const isDesktop = useDesktopBreakpoint();
+
+  const mapLink = (link: string): string => {
+    if (isDesktop && link.length > 45) return link.slice(0, 42) + '...';
+    if (!isDesktop && link.length > 30) return link.slice(0, 27) + '...';
+    return link;
+  };
 
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(item.full_short_link);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    updateCopiedURL(item.full_short_link);
   };
 
   return (
     <li className="Shorten-item">
-      <p className="Shorten-original">{item.original_link}</p>
+      <p className="Shorten-original">{mapLink(item.original_link)}</p>
       <div className="Shorten-item-divider">
-        <p className="Shorten-link">{item.full_short_link}</p>
+        <a
+          href={item.full_short_link}
+          rel="noreferrer"
+          target="_blank"
+          className="Shorten-link"
+        >
+          {mapLink(item.full_short_link)}
+        </a>
         <button
           className={`Shorten-copy ${copied && 'active'}`}
           type="button"
