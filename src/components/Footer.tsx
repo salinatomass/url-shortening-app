@@ -1,9 +1,6 @@
 import './styles/Footer.css';
 import Logo from './Logo';
-import FacebookIcon from '../images/icon-facebook.svg';
-import TwitterIcon from '../images/icon-twitter.svg';
-import PinterestIcon from '../images/icon-pinterest.svg';
-import InstagramIcon from '../images/icon-instagram.svg';
+import SocialIcon from './SocialIcon';
 
 const Footer = () => {
   return (
@@ -55,18 +52,18 @@ const Footer = () => {
             </div>
           </div>
           <div className="Footer-social">
-            <figure className="Footer-social-icon">
-              <img src={FacebookIcon} alt="Facebook icon" />
-            </figure>
-            <figure className="Footer-social-icon">
-              <img src={TwitterIcon} alt="Twitter icon" />
-            </figure>
-            <figure className="Footer-social-icon">
-              <img src={PinterestIcon} alt="Pinterest icon" />
-            </figure>
-            <figure className="Footer-social-icon">
-              <img src={InstagramIcon} alt="Instagram icon" />
-            </figure>
+            <a href="/#" className="Footer-social-icon">
+              <SocialIcon icon="facebook" />
+            </a>
+            <a href="/#" className="Footer-social-icon">
+              <SocialIcon icon="twitter" />
+            </a>
+            <a href="/#" className="Footer-social-icon">
+              <SocialIcon icon="pinterest" />
+            </a>
+            <a href="/#" className="Footer-social-icon">
+              <SocialIcon icon="instagram" />
+            </a>
           </div>
         </div>
       </div>

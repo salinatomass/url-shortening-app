@@ -1,10 +1,15 @@
 .Shorten {
   background-color: var(--gray-color);
 }
-
-.Shorten-form {
+.Shorten-container {
   position: relative;
-  top: -83px;
+  padding-top: 120px;
+}
+.Shorten-form {
+  position: absolute;
+  top: -83px; /* 83px = height / 2 */
+  left: 0;
+  right: 0;
 
   display: flex;
   flex-direction: column;
@@ -40,4 +45,37 @@
   background-color: var(--primary-color);
   color: var(--white-color);
   font-size: 18px;
+}
+.Shorten-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media screen and (min-width: 720px) {
+  .Shorten-container {
+    padding-top: 80px;
+  }
+  .Shorten-form {
+    top: -55px;
+    flex-direction: row;
+    padding: 30px 40px;
+    background-size: cover;
+  }
+  .Shorten-submit {
+    width: 230px;
+  }
+  .Shorten-list {
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Shorten-container {
+    padding-top: 100px;
+  }
+  .Shorten-form {
+    top: -70px;
+    padding: 45px 60px;
+  }
 }

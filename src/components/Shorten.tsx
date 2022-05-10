@@ -1,14 +1,17 @@
+import './styles/Shorten.css';
 import React, { useState } from 'react';
 import { useShortenList } from '../hooks/useShortenList';
 
-import './styles/Shorten.css';
-import BgShortenMobile from '../images/bg-shorten-mobile.svg';
-
 import ShortenItem from './ShortenItem';
+import useDesktopBreakpoint from '../hooks/useDesktopBreakpoint';
+
+import BgShortenMobile from '../images/bg-shorten-mobile.svg';
+import BgShortenDesktop from '../images/bg-shorten-desktop.svg';
 
 const Shorten = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const { shortenList, updateShortenList } = useShortenList();
+  const isDesktop = useDesktopBreakpoint();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setInputValue(e.target.value);
@@ -26,7 +29,11 @@ const Shorten = () => {
         <div className="Shorten-container">
           <form
             className="Shorten-form"
-            style={{ backgroundImage: `url(${BgShortenMobile})` }}
+            style={{
+              backgroundImage: `url(${
+                isDesktop ? BgShortenDesktop : BgShortenMobile
+              })`,
+            }}
             onSubmit={handleSubmit}
           >
             <input

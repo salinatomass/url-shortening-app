@@ -41,3 +41,27 @@
 .Footer-social-icon {
   display: flex;
 }
+.Footer a:hover {
+  color: var(--primary-color);
+}
+.Footer-social-icon svg:hover > path {
+  fill: var(--primary-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .Footer-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .Footer-logo {
+    width: 30%;
+    text-align: start;
+  }
+  .Footer-about {
+    width: 100%;
+    flex-direction: row;
+    text-align: start;
+    justify-content: space-evenly;
+  }
+}

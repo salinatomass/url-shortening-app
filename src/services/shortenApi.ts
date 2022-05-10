@@ -10,6 +10,8 @@ const getShortenURL = async (uri: string): Promise<ResponseOfShortenAPI> => {
 
       if (!data.ok) throw new Error(data.error);
 
+      console.log(data);
+
       resolve(data);
     } catch (err) {
       reject(err);

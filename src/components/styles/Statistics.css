@@ -1,10 +1,15 @@
 .Statistics {
   background-color: var(--gray-color);
-  text-align: center;
+  padding-top: 40px;
   padding-bottom: 80px;
+  text-align: center;
 }
 .Statistics-title {
   margin-bottom: 12px;
+}
+.Statistics-description {
+  max-width: 540px;
+  margin: 0 auto;
 }
 
 .Statistics-container {
@@ -13,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 100px;
-  margin-top: 120px;
+  margin-top: 80px;
 }
 .Statistics-card {
   position: relative;
@@ -25,10 +30,10 @@
   justify-content: space-between;
   background-color: var(--white-color);
   border-radius: 6px;
-  padding: 0 25px 40px;
+  padding: 60px 25px 40px;
 }
 .Statistics-card-image {
-  position: relative;
+  position: absolute;
   top: -45px; /* 90px (height) / 2 */
 
   background-color: var(--secondary-color);
@@ -49,4 +54,40 @@
   width: 8px;
   height: 55px; /* 100px (container gap) - 45px (statistic image position top) */
   background-color: var(--primary-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .Statistics {
+    padding-top: 60px;
+    padding-bottom: 180px;
+  }
+  .Statistics-container {
+    margin-top: 80px;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+    text-align: start;
+  }
+  .Statistics-card {
+    align-items: flex-start;
+    font-size: 16px;
+  }
+  .Statistics-card:nth-child(2n) {
+    top: 45px;
+  }
+  .Statistics-card:nth-child(3n) {
+    top: 90px;
+  }
+  .Statistics-card-title {
+    font-size: 22px;
+  }
+  .Statistics-line_divider {
+    top: 90px;
+    left: -30px;
+    width: 30px;
+    height: 8px;
+  }
+  .Statistics-card:last-child .Statistics-line_divider {
+    top: 45px;
+  }
 }

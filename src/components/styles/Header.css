@@ -17,3 +17,13 @@
   display: flex;
   color: var(--dark-gray-color);
 }
+.Header-menu:hover {
+  background-color: transparent;
+  color: var(--dark-gray-color);
+}
+
+@media screen and (min-width: 720px) {
+  .Header-menu {
+    display: none;
+  }
+}
