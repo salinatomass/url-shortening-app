@@ -10,7 +10,7 @@ const getShortenURL = async (uri: string): Promise<ResponseOfShortenAPI> => {
       const response = await fetch(`${API_URL}?url=${uri}`);
       const data = (await response.json()) as ResponseOfShortenAPI;
 
-      if (!data.ok) throw new Error('Upps! This is not a valid link');
+      if (!data.ok) throw new Error('This is not a valid link');
 
       resolve(data);
     } catch (err) {
